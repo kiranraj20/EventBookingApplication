@@ -1,0 +1,33 @@
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scroll-bar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scroll-bar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+* {
+  font-family:inter;
+}
+
+.heading-color {
+  color:#1E2022;
+  text-decoration:#1E2022;
+}
+
+.subtitle-color {
+  color:#989090;
+  text-decoration:#989090;
+}
+
+.logo-color {
+  color:#CF2D2D;
+  text-decoration: #CF2D2D;
+}
+
+.border-color {
+  border-color: #B0BABF;
+}
