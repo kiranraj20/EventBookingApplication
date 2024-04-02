@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 import { useInView } from 'react-intersection-observer';
 import I_Events from '../Types/Interface';
@@ -10,7 +10,6 @@ const UEvents = () => {
   const [events, setEvents] = useState<I_Events[]>([]);
   const [totalPages, setTotalPages] = useState<number>(0);
   const [page, setPage] = useState<number>(0);
-  const [isLoading, setIsLoading] = useState(true);
   let alt = 'https://d3hjf51r9j54j7.cloudfront.net/wp-content/uploads/sites/9/2020/04/Event-industry-faces-collapse-within-three-months-photo-pxhere-CCO.jpg'
 
   // Reference for Intersection Observer
