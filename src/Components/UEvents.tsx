@@ -18,24 +18,24 @@ const UEvents = () => {
     rootMargin: "0px"
   });
 
+  // Function to fetch events
+  const fetchEvents = (pageNumber: number) => {
+    const url = `https://gg-backend-assignment.azurewebsites.net/api/Events?code=FOX643kbHEAkyPbdd8nwNLkekHcL4z0hzWBGCd64Ur7mAzFuRCHeyQ==&page=${pageNumber}&type=upcoming`;
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => {
+        // Set total pages and update events
+        setTotalPages(data.totalPages - 1);
+        !events[0] ? setEvents(data.events) : setEvents([...events, ...data.events]);
+      });
+  };
 
   // Effect to fetch events when page changes
   useEffect(() => {
-    // Function to fetch events
-    const fetchEvents = (pageNumber: number) => {
-      const url = `https://gg-backend-assignment.azurewebsites.net/api/Events?code=FOX643kbHEAkyPbdd8nwNLkekHcL4z0hzWBGCd64Ur7mAzFuRCHeyQ==&page=${pageNumber}&type=upcoming`;
-      fetch(url)
-        .then((res) => res.json())
-        .then((data) => {
-          setTotalPages(data.totalPages - 1);
-          !events[0] ? setEvents(data.events) : setEvents([...events, ...data.events]);
-        });
-    };
-  
     if (page !== 0) {
       fetchEvents(page);
     }
-  }, [page, events]);
+  }, [page]);
 
   // Effect to load more events when user reaches the end of the page
   useEffect(() => {
@@ -44,10 +44,10 @@ const UEvents = () => {
         setPage(page + 1);
       }
     }
-  }, [inView, page, totalPages]);
+  }, [inView]);
 
   return (
-    <div className='container-fluid d-flex flex-column p-4' style={{ width: '100%', height: '100%', translate: '0% -10%' }}>
+    <div className='container-fluid d-flex flex-column p-4' style={{ width: '100%', height: '100%', translate: '0% -20%' }}>
       {/* Header */}
       <div className='heading-color py-2 fw-medium d-flex flex-row justify-content-between pe-2'>
         <p>Upcoming Events <FaArrowRight /></p>

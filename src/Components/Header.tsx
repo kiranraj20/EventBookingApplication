@@ -62,11 +62,11 @@ const Header = () => {
       </div>
       {/* Location display with an arrow icon */}
       <div className=" d-md-flex flex-row align-items-center justify-content-around">
-        <p className='d-flex my-0 mx-4 m-md-0 flex-row align-items-center'>
+        <div className='d-flex my-0 mx-4 m-md-0 flex-row align-items-center'>
           <FaLocationPin className='subtitle-color m-0 p-0' />
           <p className='heading-color m-0 p-0'>Mumbai, India</p>
           <MdKeyboardArrowRight className='subtitle-color m-0 p-0' />
-        </p>
+        </div>
         {/* List of categories */}
         <ul className=' heading-color d-flex mx-1 px-1 my-2 flex-row list-unstyled gap-4 gap-md-5 align-items-center overflow-x-auto no-scroll-bar'>
           <li className='text-nowrap'>Live shows</li>
